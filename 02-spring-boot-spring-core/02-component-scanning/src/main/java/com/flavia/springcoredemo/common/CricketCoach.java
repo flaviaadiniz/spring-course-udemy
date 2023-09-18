@@ -1,4 +1,4 @@
-package com.flavia.springcoredemo;
+package com.flavia.springcoredemo.common;
 
 import org.springframework.stereotype.Component;
 

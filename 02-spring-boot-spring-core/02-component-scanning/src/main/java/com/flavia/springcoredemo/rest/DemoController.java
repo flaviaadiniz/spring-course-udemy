@@ -1,5 +1,6 @@
-package com.flavia.springcoredemo;
+package com.flavia.springcoredemo.rest;
 
+import com.flavia.springcoredemo.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
