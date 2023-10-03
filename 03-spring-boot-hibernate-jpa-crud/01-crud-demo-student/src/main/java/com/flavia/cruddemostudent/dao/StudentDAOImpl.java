@@ -1,6 +1,6 @@
-package dao;
+package com.flavia.cruddemostudent.dao;
 
-import entity.Student;
+import com.flavia.cruddemostudent.entity.Student;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

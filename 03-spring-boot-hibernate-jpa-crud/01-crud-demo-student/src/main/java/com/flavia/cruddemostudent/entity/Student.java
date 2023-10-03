@@ -1,4 +1,4 @@
-package entity;
+package com.flavia.cruddemostudent.entity;
 
 import jakarta.persistence.*;
 
