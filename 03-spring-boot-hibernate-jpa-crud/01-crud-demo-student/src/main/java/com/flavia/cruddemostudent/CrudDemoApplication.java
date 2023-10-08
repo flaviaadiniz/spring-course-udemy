@@ -26,8 +26,22 @@ public class CrudDemoApplication {
 
 			// readStudent(studentDAO);
 
-			queryForStudents(studentDAO);
+			// queryForStudents(studentDAO);
+
+			queryForStudentsByLasyName(studentDAO);
 		};
+
+	}
+
+	private void queryForStudentsByLasyName(StudentDAO studentDAO) {
+
+		// get a list of students
+		List<Student> theStudents = studentDAO.findByLastName("Duck");
+
+		// display list of students
+		for (Student student : theStudents) {
+			System.out.println(student);
+		}
 
 	}
 
