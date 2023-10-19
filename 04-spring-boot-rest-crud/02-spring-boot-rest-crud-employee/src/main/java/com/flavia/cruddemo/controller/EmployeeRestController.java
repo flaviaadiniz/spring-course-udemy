@@ -2,10 +2,7 @@ package com.flavia.cruddemo.controller;
 
 import com.flavia.cruddemo.entity.Employee;
 import com.flavia.cruddemo.service.EmployeeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,7 +10,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class EmployeeRestController {
 
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     public EmployeeRestController(EmployeeService employeeService) {
         this.employeeService = employeeService;
@@ -39,6 +36,15 @@ public class EmployeeRestController {
     }
 
 
+    @PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee theEmployee) {
+
+        //just in case an id is passed in JSON... set id to 0 to force a save of new item instead of update
+        theEmployee.setId(0);
+
+        return employeeService.save(theEmployee);
+
+    }
 
 
 }
