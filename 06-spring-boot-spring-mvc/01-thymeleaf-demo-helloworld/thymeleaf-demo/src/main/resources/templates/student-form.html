@@ -10,11 +10,11 @@
 
 <form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
 
-  First name: <input type="text" th:field="*{firstName}"/>
+  First name: <input type="text" th:field="*{firstName}" th:placeholder="'type your first name'"/>
 
   <br><br>
 
-  Last name: <input type="text" th:field="*{lastName}"/>
+  Last name: <input type="text" th:field="*{lastName}" th:placeholder="'type your last name'"/>
 
   <br><br>
 
