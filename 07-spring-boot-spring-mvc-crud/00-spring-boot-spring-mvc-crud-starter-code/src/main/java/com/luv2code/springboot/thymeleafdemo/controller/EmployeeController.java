@@ -72,4 +72,15 @@ public class EmployeeController {
 
     }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam("employeeId") int id) {
+
+        // delete the employee
+        employeeService.deleteById(id);
+
+        // redirect to /employee/list
+        return "redirect:/employees/list";
+
+    }
+
 }
