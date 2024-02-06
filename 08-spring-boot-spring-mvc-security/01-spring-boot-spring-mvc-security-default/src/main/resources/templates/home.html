@@ -7,9 +7,18 @@
 </head>
 
 <body>
-  <h2>luv2code Company Home Page</h2>
-  <hr>
-  Welcome to the luv2code company home page!
+    <h2>luv2code Company Home Page</h2>
+    <hr>
+
+    <p>
+        Welcome to the luv2code company home page!
+    </p>
+
+    <!-- Add a logout button -->
+    <form action="#" th:action="@{/logout}" method="POST">
+        <input type="submit" value="Logout"/>
+    </form>
+
 </body>
 
 </html>
