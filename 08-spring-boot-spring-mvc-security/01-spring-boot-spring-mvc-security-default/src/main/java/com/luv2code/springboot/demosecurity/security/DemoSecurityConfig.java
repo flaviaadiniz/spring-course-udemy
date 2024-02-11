@@ -49,11 +49,11 @@ public class DemoSecurityConfig {
                                         .loginPage("/showMyLoginPage")
                                         .loginProcessingUrl("/authenticateTheUser")
                                         .permitAll()
-        ).logout(LogoutConfigurer::permitAll);
+        ).logout(LogoutConfigurer::permitAll)
+                .exceptionHandling(configurer -> configurer.accessDeniedPage("/access-denied"));
 
         return http.build();
 
     }
-
 
 }
