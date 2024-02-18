@@ -83,7 +83,7 @@ public class Instructor {
         this.instructorDetail = instructorDetail;
     }
 
-    
+
     @Override
     public String toString() {
         return "Instructor{" +
