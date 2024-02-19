@@ -1,10 +1,12 @@
-package dao;
+package com.luv2code.cruddemo.dao;
 
-import entity.Instructor;
+import com.luv2code.cruddemo.entity.Instructor;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+@Repository
 public class AppDAOImpl implements AppDAO {
 
     // define a field for entity manager
