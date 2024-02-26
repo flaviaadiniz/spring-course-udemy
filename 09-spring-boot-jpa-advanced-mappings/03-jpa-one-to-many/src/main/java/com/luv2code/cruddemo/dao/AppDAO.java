@@ -24,4 +24,8 @@ public interface AppDAO {
 
     void update(Instructor instructor);
 
+    void updateCourse(Course course);
+
+    Course findCourseById(int id);
+
 }
