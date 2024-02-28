@@ -138,4 +138,10 @@ public class AppDAOImpl implements AppDAO {
 
     }
 
+    @Override
+    @Transactional
+    public void save(Course course) {
+        entityManager.persist(course);
+    }
+
 }
