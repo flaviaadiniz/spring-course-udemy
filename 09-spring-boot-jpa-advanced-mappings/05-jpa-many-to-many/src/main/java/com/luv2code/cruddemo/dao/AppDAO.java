@@ -41,4 +41,6 @@ public interface AppDAO {
 
     void update(Student student);
 
+    void deleteStudentById(int id);
+
 }
