@@ -16,15 +16,20 @@ public class AopDemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(AccountDAO accountDAO) {
 
-		return runner -> {
-			demoTheBeforeAdvice(accountDAO);
-		};
+		return runner -> demoTheBeforeAdvice(accountDAO);
 
 	}
 
 	private void demoTheBeforeAdvice(AccountDAO accountDAO) {
 		// call the business method
 		accountDAO.addAccount();
+
+		// do it again
+		System.out.println("\nLet's call it again!");
+
+		// call the business method again
+		accountDAO.addAccount();
+
 	}
 
 }
