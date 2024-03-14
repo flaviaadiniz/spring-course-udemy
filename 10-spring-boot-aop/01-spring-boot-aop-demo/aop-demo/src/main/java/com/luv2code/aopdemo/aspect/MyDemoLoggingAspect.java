@@ -13,22 +13,28 @@ public class MyDemoLoggingAspect {
 
     @Before("execution(* add*())") // using * as a wildcard to match any return type
     public void beforeAddAccountAdvice() {
-        System.out.println("\n ====> Executing @Before advice on any method that starts with add");
+        System.out.println("====> Executing @Before advice on any method that starts with add");
     }
 
     @Before("execution(* add*(com.luv2code.aopdemo.Account))")
     public void beforeAddAccountAdviceMatchingParameter() {
-        System.out.println("\n ====> Executing @Before advice before method with parameter of type Account");
+        System.out.println("====> Executing @Before advice before method with parameter of type Account");
     }
 
     @Before("execution(* add*(com.luv2code.aopdemo.Account, ..))") // matches on any number of arguments
     public void beforeAddAccountAdviceMatchingMultipleParameters() {
-        System.out.println("\n ====> Executing @Before advice before method with any number of parameters of type Account");
+        System.out.println("====> Executing @Before advice before method with any number of parameters of type Account");
     }
 
     @Before("execution(* com.luv2code..add*(..))") // matches on any number of arguments
     public void beforeAddAccountAdviceMatchingAnyParameters() {
-        System.out.println("\n ====> Executing @Before advice before method with any parameters");
+        System.out.println("====> Executing @Before advice before method with any parameters");
+    }
+
+    @Before("execution(* com.luv2code.aopdemo.dao.*.*(..))")
+    // the first * matches any class in the package, the second * matches any method, the (..) matches any param
+    public void beforeAddAccountAdviceMatchingAnyMethodInAPackage() {
+        System.out.println("====> Executing @Before advice before any method from the package");
     }
 
 }
