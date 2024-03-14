@@ -26,4 +26,9 @@ public class MyDemoLoggingAspect {
         System.out.println("\n ====> Executing @Before advice before method with any number of parameters of type Account");
     }
 
+    @Before("execution(* com.luv2code..add*(..))") // matches on any number of arguments
+    public void beforeAddAccountAdviceMatchingAnyParameters() {
+        System.out.println("\n ====> Executing @Before advice before method with any parameters");
+    }
+
 }
