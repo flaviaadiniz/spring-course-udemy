@@ -29,7 +29,7 @@ public class AopDemoApplication {
 		List<Account> accounts = accountDAO.findAccounts();
 
 		// display the accounts
-		System.out.println("\n\nMain Program: demoTheAfterReturningAdvice");
+		System.out.println("\nMain Program: demoTheAfterReturningAdvice");
 		System.out.println("----");
 		System.out.println(accounts);
 
