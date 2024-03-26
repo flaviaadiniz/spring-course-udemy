@@ -42,6 +42,7 @@ public class MyDemoLoggingAspect {
     }
 
     // add a new advice for @AfterReturning on the findAccounts method
+
     @AfterReturning(
             pointcut = "execution (* com.luv2code.aopdemo.dao.AccountDAO.findAccounts(..))",
             returning = "result")
@@ -51,8 +52,26 @@ public class MyDemoLoggingAspect {
         String method = joinPoint.getSignature().toShortString();
         System.out.println("====> Executing @AfterReturning on method: " + method);
 
-        // print out the reuslts of the method call
+        // print out the results of the method call
         System.out.println("====> result is: " + result);
+
+        // let's post-process the data ... convert the account names to uppercase
+        convertAccountNamesToUpperCase(result);
+        System.out.println("====> result is: " + result);
+
+    }
+
+    private void convertAccountNamesToUpperCase(List<Account> result) {
+
+        // loop through accounts
+        for (Account account : result) {
+
+            // get uppercase version of name
+            String upperName = account.getName().toUpperCase();
+
+            // update the name on the account
+            account.setName(upperName);
+        }
 
     }
 
