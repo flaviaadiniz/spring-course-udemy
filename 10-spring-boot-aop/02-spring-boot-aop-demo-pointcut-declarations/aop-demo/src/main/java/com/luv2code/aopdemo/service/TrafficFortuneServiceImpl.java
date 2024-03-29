@@ -22,4 +22,14 @@ public class TrafficFortuneServiceImpl implements TrafficFortuneService {
 
     }
 
+    @Override
+    public String getFortune(boolean tripWire) {
+
+        if (tripWire) {
+            throw new RuntimeException("Major accident! Highway is closed!");
+        }
+
+        return getFortune();
+    }
+
 }

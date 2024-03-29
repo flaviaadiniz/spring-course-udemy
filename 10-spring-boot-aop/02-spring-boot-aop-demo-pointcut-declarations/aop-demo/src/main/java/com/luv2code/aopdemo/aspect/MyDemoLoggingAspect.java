@@ -93,7 +93,17 @@ public class MyDemoLoggingAspect {
         long begin = System.currentTimeMillis();
 
         // execute the method
-        Object result = proceedingJoinPoint.proceed();
+        Object result = null;
+
+        try {
+            result = proceedingJoinPoint.proceed();
+        } catch (Exception exception) {
+            // log the exception
+            System.out.println(exception.getMessage());
+
+            // give user a custom message
+            result = "Major accident! But no worries, your private AOP helicopter is on the way!";
+        }
 
         // get end timestamp
         long end = System.currentTimeMillis();
@@ -104,6 +114,7 @@ public class MyDemoLoggingAspect {
 
         return result;
     }
+
 
 
     private void convertAccountNamesToUpperCase(List<Account> result) {
